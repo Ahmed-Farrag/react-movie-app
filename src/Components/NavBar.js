@@ -1,10 +1,22 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../assets/logo.png";
+import { useDispatch } from "react-redux";
+import { getAllMovie, getMovieSearch } from "../Redux/Actions/MoviesAction";
 
-const NavBar = ({ search }) => {
+const NavBar = () => {
   const onSearch = (word) => {
     search(word);
+  };
+
+  const dispatch = useDispatch();
+  //to search in api
+  const search = async (word) => {
+    if (word === "") {
+      dispatch(getAllMovie());
+    } else {
+      dispatch(getMovieSearch(word));
+    }
   };
   return (
     <div className="nav-style w-100">
