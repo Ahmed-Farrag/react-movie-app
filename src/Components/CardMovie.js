@@ -13,10 +13,8 @@ const CardMovie = ({ mov }) => {
           />
           <div className="card__overlay">
             <div className="overlay__text text-center w-100 p-2">
-              <p>اسم الفيلم: {mov.title}</p>
-              <p> تاريخ الاصدار: {mov.re}</p>
-              <p>عدد المقيمين: {mov.vote_count} </p>
-              <p> التقييم: {mov.vote_average}</p>
+              <p>اسم الفيلم: {mov.name}</p>
+              <p> تاريخ الاصدار: {mov.description}</p>
             </div>
           </div>
         </div>
