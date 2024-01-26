@@ -3,9 +3,9 @@ import NavBar from "../Components/NavBar";
 import renderWithRedux from "./Utils/testRedux";
 import userEvent from "@testing-library/user-event";
 import makeReq from "./Utils/mswMockReq";
-import MovieList from "../Components/MovieList";
 import { MemoryRouter } from "react-router-dom";
 import { baseURL } from "./Utils/ApiLink";
+import { NavWithList } from "./Utils/MixedComponent";
 
 // test navbar ui
 describe("test navbar ui", () => {
@@ -67,12 +67,3 @@ describe("test navbar function", () => {
     expect(card).toHaveLength(1);
   });
 });
-
-const NavWithList = () => {
-  return (
-    <>
-      <NavBar />
-      <MovieList />
-    </>
-  );
-};

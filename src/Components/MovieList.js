@@ -30,7 +30,9 @@ const MovieList = () => {
           );
         })
       ) : (
-        <p className="text-center p-5">لا يوجد أفلام</p>
+        <p className="text-center p-5" data-testid="noData">
+          لا يوجد أفلام
+        </p>
       )}
       {movies.length >= 1 ? <PaginationComp /> : null}
     </Row>
