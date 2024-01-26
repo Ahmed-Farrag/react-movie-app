@@ -1,5 +1,5 @@
-import { ALLMOVIES, MovieApi } from "../Types/MoviesType";
 import axios from "axios";
+import { ALLMOVIES, MovieApi } from "../Types/MoviesType";
 
 export const getAllMovie = () => {
   return async (dispatch) => {

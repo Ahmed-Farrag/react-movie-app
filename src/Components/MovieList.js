@@ -23,10 +23,14 @@ const MovieList = () => {
     <Row className="mt-3">
       {movies.length >= 1 ? (
         movies.map((mov) => {
-          return <CardMovie key={mov.id} mov={mov} />;
+          return (
+            <div key={mov.id} data-testid="card">
+              <CardMovie mov={mov} />
+            </div>
+          );
         })
       ) : (
-        <p className="text-center p-5">لا يوجد افلام</p>
+        <p className="text-center p-5">لا يوجد أفلام</p>
       )}
       {movies.length >= 1 ? <PaginationComp /> : null}
     </Row>
