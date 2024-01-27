@@ -7,6 +7,13 @@ import { baseURL } from "./Utils/ApiLink";
 import makeReq from "./Utils/mswMockReq";
 import { NavWithList } from "./Utils/MixedComponent";
 
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useDispatch: () => {
+    return { id: 0 };
+  },
+}));
+
 makeReq([
   {
     url: `${baseURL}/movie/popular`,

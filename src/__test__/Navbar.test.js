@@ -7,6 +7,12 @@ import { MemoryRouter } from "react-router-dom";
 import { baseURL } from "./Utils/ApiLink";
 import { NavWithList } from "./Utils/MixedComponent";
 
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useDispatch: () => {
+    return { id: 0 };
+  },
+}));
 // test navbar ui
 describe("test navbar ui", () => {
   // test logo render
