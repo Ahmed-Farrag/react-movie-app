@@ -6,6 +6,9 @@ import { MemoryRouter } from "react-router-dom";
 import { baseURL } from "./Utils/ApiLink";
 import makeReq from "./Utils/mswMockReq";
 import { NavWithList } from "./Utils/MixedComponent";
+import axios from "axios";
+
+jest.mock("axios");
 
 makeReq([
   {

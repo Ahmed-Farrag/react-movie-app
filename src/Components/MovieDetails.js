@@ -12,6 +12,7 @@ function MovieDetails({ mov }) {
     const res = await axios.get(
       `https://api.themoviedb.org/3/movie/${param.id}?api_key=52ef927bbeb21980cd91386a29403c78&language=ar`
     );
+    console.log(res);
     setMovie(res.data);
   };
 
@@ -27,21 +28,24 @@ function MovieDetails({ mov }) {
           <div className="card-detalis  d-flex align-items-center ">
             <img
               className="img-movie w-30"
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
               alt="ascad"
             />
             <div className="justify-content-center text-center  mx-auto">
-              <p className="card-text-details border-bottom">
-                اسم الفيلم: {movie.title}
+              <p
+                data-testid="title"
+                className="card-text-details border-bottom"
+              >
+                اسم الفيلم: {movie?.title}
               </p>
               <p className="card-text-details border-bottom">
-                تاريخ الفيلم :{movie.release_date}
+                تاريخ الفيلم :{movie?.release_date}
               </p>
               <p className="card-text-details border-bottom">
-                عدد المقيمين : {movie.vote_count}
+                عدد المقيمين : {movie?.vote_count}
               </p>
               <p className="card-text-details border-bottom">
-                التقييم :{movie.vote_average}
+                التقييم :{movie?.vote_average}
               </p>
             </div>
           </div>
@@ -55,7 +59,7 @@ function MovieDetails({ mov }) {
               <p className="card-text-title border-bottom">القصة:</p>
             </div>
             <div className="text-end px-2">
-              <p className="card-text-story">{movie.overview}</p>
+              <p className="card-text-story">{movie?.overview}</p>
             </div>
           </div>
         </Col>
@@ -75,7 +79,7 @@ function MovieDetails({ mov }) {
               عوده للرئيسيه
             </button>
           </Link>
-          <a href={movie.homepage}>
+          <a href={movie?.homepage}>
             <button
               style={{ backgroundColor: "#b45b35", border: "none" }}
               className="btn btn-primary"

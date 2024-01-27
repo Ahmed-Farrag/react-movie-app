@@ -1,5 +1,6 @@
 import { rest } from "msw";
 import { setupServer } from "msw/node";
+import axios from "axios";
 
 const makeReq = async (config) => {
   const handler = config.map((con) => {
@@ -16,3 +17,6 @@ const makeReq = async (config) => {
 };
 
 export default makeReq;
+
+// or
+// axios.get.mockResolveOnce({ data: movie });
