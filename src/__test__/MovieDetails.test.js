@@ -65,5 +65,7 @@ describe("test ui", () => {
     );
     const title = await screen.findByTestId("title");
     expect(title.innerHTML).toContain(movie?.title);
+    const asd = await screen.findByTestId("asd");
+    expect(asd.getAttribute("href")).toBe(movie?.homepage);
   });
 });
