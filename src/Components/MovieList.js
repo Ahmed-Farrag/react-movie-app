@@ -23,11 +23,7 @@ const MovieList = () => {
     <Row className="mt-3">
       {movies.length >= 1 ? (
         movies.map((mov) => {
-          return (
-            <div key={mov.id} data-testid="card">
-              <CardMovie mov={mov} />
-            </div>
-          );
+          return <CardMovie mov={mov} key={mov.id} data-testid="card" />;
         })
       ) : (
         <p className="text-center p-5" data-testid="noData">
