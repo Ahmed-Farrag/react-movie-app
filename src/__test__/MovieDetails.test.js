@@ -1,11 +1,6 @@
 import { screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import MovieList from "../Components/MovieList";
 import { renderWithRedux } from "./Utils/testRedux";
 import { MemoryRouter } from "react-router-dom";
-import { baseURL } from "./Utils/ApiLink";
-import makeReq from "./Utils/mswMockReq";
-import { NavWithList } from "./Utils/MixedComponent";
 import axios from "axios";
 import MovieDetails from "../Components/MovieDetails";
 
@@ -32,7 +27,7 @@ jest.mock("axios");
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useParams: () => {
-    return { id: 16 };
+    return { id: 1 };
   },
 }));
 

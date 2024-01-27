@@ -6,7 +6,6 @@ import makeReq from "./Utils/mswMockReq";
 import { MemoryRouter } from "react-router-dom";
 import { baseURL } from "./Utils/ApiLink";
 import { NavWithList } from "./Utils/MixedComponent";
-import axios from "axios";
 
 // test navbar ui
 describe("test navbar ui", () => {

@@ -11,10 +11,10 @@ const PaginationComp = () => {
 
   useEffect(() => {
     setpageCount(pages);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handlePageClick = (data) => {
+    console.log(data.selected);
     dispatch(getPage(data.selected + 1));
   };
 
@@ -27,7 +27,6 @@ const PaginationComp = () => {
       pageRangeDisplayed={2}
       pageCount={pageCount}
       previousLabel="السابق"
-      renderOnZeroPageCount={null}
       containerClassName={"pagination justify-content-center p-3"}
       pageClassName={"page-item"}
       pageLinkClassName={"page-link"}

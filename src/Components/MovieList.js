@@ -30,7 +30,7 @@ const MovieList = () => {
           لا يوجد أفلام
         </p>
       )}
-      {movies.length >= 1 ? <PaginationComp /> : null}
+      {movies && movies.length >= 1 ? <PaginationComp /> : null}
     </Row>
   );
 };
