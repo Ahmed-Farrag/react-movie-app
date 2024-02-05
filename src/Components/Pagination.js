@@ -7,7 +7,7 @@ const PaginationComp = () => {
   const [pageCount, setpageCount] = useState(0);
 
   const dispatch = useDispatch();
-  const pages = useSelector((state) => state.pageCount);
+  const pages = useSelector((state) => state.PageCount);
 
   useEffect(() => {
     setpageCount(pages);
@@ -23,9 +23,10 @@ const PaginationComp = () => {
       breakLabel="..."
       nextLabel="التالي"
       onPageChange={handlePageClick}
-      marginPagesDisplayed={2}
+      marginPagesDisplayed={0}
       pageRangeDisplayed={2}
       pageCount={pageCount}
+      renderOnZeroPageCount={null}
       previousLabel="السابق"
       containerClassName={"pagination justify-content-center p-3"}
       pageClassName={"page-item"}
